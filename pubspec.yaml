@@ -34,11 +34,17 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
-  acr_cloud_sdk: ^2.0.2
   avatar_glow: ^3.0.1
   flutter_hooks: ^0.21.3+1
   hooks_riverpod: ^3.2.0
   dio: ^5.9.1
+  acr_cloud_sdk:
+    path: packages/acr_cloud_sdk
+  permission_handler: ^12.0.1
+
+dependency_overrides:
+  permission_handler: ^12.0.1
+  permission_handler_android: ^13.0.1
 
 dev_dependencies:
   flutter_test:

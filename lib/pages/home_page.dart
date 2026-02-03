@@ -23,13 +23,13 @@ class HomePage extends StatelessWidget {
                         // LIBRARY BUTTON
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.person_search,
                             color: Colors.white,
                             size: 40,
                           ),
                         ),
-                        Text(
+                        const Text(
                           "Library",
                           style: TextStyle(
                             fontSize: 14,
@@ -40,21 +40,21 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
 
-                    Spacer(),
+                    const Spacer(),
 
                     // CONCERTS BUTTON
                     Column(
                       children: [
                         IconButton(
                           onPressed: () {},
-                          icon: Icon(
+                          icon: const Icon(
                             Icons.confirmation_num,
                             color: Colors.white,
                             size: 40,
                           ),
                         ),
 
-                        Text(
+                        const Text(
                           "Concerts",
                           style: TextStyle(
                             fontSize: 14,
@@ -68,11 +68,11 @@ class HomePage extends StatelessWidget {
                 ),
               ),
 
-              SizedBox(height: 50),
+              const SizedBox(height: 50),
 
               Column(
                 children: [
-                  Row(
+                  const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Icon(Icons.headphones, color: Colors.white, size: 40),
@@ -90,51 +90,55 @@ class HomePage extends StatelessWidget {
                     ],
                   ),
 
-                  SizedBox(height: 75),
+                  const SizedBox(height: 75),
 
                   // SHAZAM CIRCLE
                   AvatarGlow(
-                    startDelay: Duration(milliseconds: 1000),
+                    startDelay: const Duration(milliseconds: 1000),
                     glowColor: Colors.white,
                     glowShape: BoxShape.circle,
-                    animate: true,
+                    glowRadiusFactor: 0.3,
+                    animate: false,
                     curve: Curves.fastOutSlowIn,
-                    duration: Duration(milliseconds: 2000),
+                    duration: const Duration(milliseconds: 2000),
                     repeat: true,
-                    child: Material(
-                      shape: CircleBorder(),
-                      child: Container(
-                        height: 250,
-                        width: 250,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          gradient: RadialGradient(
-                            colors: [
-                              Color(0xff333333),
-                              Color(0xff2f2f2f),
-                              Color(0xff575757),
-                            ],
+                    child: GestureDetector(
+                      onTap: () => print("Tapped Shazam"),
+                      child: Material(
+                        shape: const CircleBorder(),
+                        child: Container(
+                          height: 250,
+                          width: 250,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: RadialGradient(
+                              colors: [
+                                Color(0xff333333),
+                                Color(0xff2f2f2f),
+                                Color(0xff575757),
+                              ],
+                            ),
                           ),
-                        ),
-                        child: Image(
-                          image: ResizeImage(
-                            AssetImage("assets/images/shazam-logo.png"),
-                            width: 150,
-                            height: 150,
+                          child: const Image(
+                            image: ResizeImage(
+                              AssetImage("assets/images/shazam-logo.png"),
+                              width: 150,
+                              height: 150,
+                            ),
+                            color: Colors.white,
                           ),
-                          color: Colors.white,
                         ),
                       ),
                     ),
                   ),
 
-                  SizedBox(height: 100),
+                  const SizedBox(height: 100),
 
                   // SEARCH ICON BUTTON
                   Container(
                     width: 75,
                     height: 75,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle,
                       gradient: RadialGradient(
                         colors: [
@@ -146,7 +150,11 @@ class HomePage extends StatelessWidget {
                     ),
                     child: IconButton(
                       onPressed: () {},
-                      icon: Icon(Icons.search, color: Colors.white, size: 40),
+                      icon: const Icon(
+                        Icons.search,
+                        color: Colors.white,
+                        size: 40,
+                      ),
                     ),
                   ),
                 ],

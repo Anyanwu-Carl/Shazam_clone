@@ -13,7 +13,7 @@ class SongService {
     );
     _dio = Dio(options);
   }
-  Future<DeezerSongModel> getTrack(int id) async {
+  Future<DeezerSongModel> getTrack(id) async {
     try {
       final response = await _dio.get(
         "$id",
@@ -24,8 +24,8 @@ class SongService {
           },
         ),
       );
-      DeezerSongModel song = DeezerSongModel.fromJson(response.data);
-      return song;
+      DeezerSongModel result = DeezerSongModel.fromJson(response.data);
+      return result;
     } on DioException catch (e) {
       if (e.requestOptions != null) {
         throw ("An error occurred: ${e.message}");

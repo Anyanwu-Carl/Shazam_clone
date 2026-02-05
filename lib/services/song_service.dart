@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
 import 'package:shazam_clone/services/models/deezer_song_model.dart';
 
@@ -7,8 +6,8 @@ class SongService {
 
   SongService() {
     BaseOptions options = BaseOptions(
-      receiveTimeout: Duration(seconds: 100000),
-      connectTimeout: Duration(seconds: 100000),
+      receiveTimeout: const Duration(seconds: 100000),
+      connectTimeout: const Duration(seconds: 100000),
       baseUrl: "https://api.deezer.com/track/",
     );
     _dio = Dio(options);

@@ -1,11 +1,25 @@
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:shazam_clone/pages/song_screen.dart';
+import 'package:shazam_clone/viewmodels/home_vm.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends HookConsumerWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final vm = ref.watch(homeViewModel);
+    ref.listen<HomeViewModel>(homeViewModel, (previous, next) {
+      if (next.success) {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => SongScreen(song: vm.currentSong),
+          ),
+        );
+      }
+    });
     return Scaffold(
       backgroundColor: Colors.black,
       body: Container(
@@ -98,12 +112,14 @@ class HomePage extends StatelessWidget {
                     glowColor: Colors.white,
                     glowShape: BoxShape.circle,
                     glowRadiusFactor: 0.3,
-                    animate: false,
+                    animate: vm.isRecognizing,
                     curve: Curves.fastOutSlowIn,
                     duration: const Duration(milliseconds: 2000),
                     repeat: true,
                     child: GestureDetector(
-                      onTap: () => print("Tapped Shazam"),
+                      onTap: () => vm.isRecognizing
+                          ? vm.stopRecognizing()
+                          : vm.startRecognizing(),
                       child: Material(
                         shape: const CircleBorder(),
                         child: Container(

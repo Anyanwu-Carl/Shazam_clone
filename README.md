@@ -1,16 +1,48 @@
-# shazam_clone
+# 🎵 Shazam Clone (Flutter + Deezer API + Acr cloud)
 
-A new Flutter project.
+A Flutter-based music recognition app inspired by **Shazam**, with a twist.  
+The app identifies songs, fetches metadata from the **Deezer API**, and displays it.
 
-## Getting Started
+Built with modern Flutter architecture using **Riverpod**, **Hooks**, and **clean separation of concerns**.
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+## 🚀 Features
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- 🎧 Song recognition (audio-based)
+- 🔍 Fetch song details from Deezer API
+- 🖼 Album cover display
+- 🌙 Dark-themed UI
+- 🧠 Modern state management with Riverpod
+- ⚡ Fast and lightweight architecture
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+---
+
+## 🛠 Tech Stack
+
+- **Flutter (Dart)**
+- **Riverpod 2.x + Hooks**
+- **Deezer REST API**
+- **Dio** (HTTP networking)
+
+---
+
+## 🏗 Architecture
+
+The app follows a **clean MVVM-inspired architecture**:
+
+🧠 What I Learned
+
+- Modern Riverpod patterns (ref.watch, ref.listen)
+- API integration with Dio
+- Null-safety best practices
+- Clean Flutter app architecture
+
+🔮 Future Improvements
+
+- 🎚 Audio waveform visualization
+- 📊 Preview progress bar
+- 🎼 Lyrics integration
+- 🔗 Spotify / Apple Music deep links
+- 📱 Improved animations & UX
+- ▶️ Play 30-second song preview

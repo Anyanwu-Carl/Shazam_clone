@@ -27,6 +27,9 @@ Built with modern Flutter architecture using **Riverpod**, **Hooks**, and **clea
 
 ---
 
+## 📸 Screenshots
+![Home Screen](https://github.com/Anyanwu-Carl/Car_Rentals/blob/93ff2302c239d5f0e6adfb45876df4ec9c8764e0/Aesthetic%20Phone%20Mockup.png)
+
 ## 🏗 Architecture
 
 The app follows a **clean MVVM-inspired architecture**:
